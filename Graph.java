@@ -1,3 +1,8 @@
+/* by Jared Kozar
+Created on 6/11/21
+Graph.java
+*/
+
 // imports various classes
 import java.util.Arrays;
 import java.util.Iterator;
@@ -100,10 +105,14 @@ class Graph {
 
         keyboard.nextLine(); 
         for(int i = 0; i < edges; i++) {
-           String coordinates = keyboard.nextLine(); 
-           String coordsWOSpaces = coordinates.replaceAll("\\s", "");
-           String[] coordarray = coordsWOSpaces.split(",");
-           g.addEdge(Integer.parseInt(coordarray[0]), Integer.parseInt(coordarray[1]));
+
+            //asks the user to enter the coordinate points, and the system takes out the space (if the user entered a space), and creates an array. The first element pf the array contains the first coordinate point, and the second number contains the second coordinate point. It then converts these numbers to integers, and calls the addEdge method to add them into the graph.
+
+            System.out.print("Enter the coordinate points, in the form of (point1, point2): ");
+            String coordinates = keyboard.nextLine(); 
+            String coordsWOSpaces = coordinates.replaceAll("\\s", "");
+            String[] coordarray = coordsWOSpaces.split(",");
+            g.addEdge(Integer.parseInt(coordarray[0]), Integer.parseInt(coordarray[1]));
         }
  
         System.out.print("Enter the cost per edge: ");
